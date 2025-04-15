@@ -62,7 +62,7 @@ public class e2eTest {
 		List<WebElement> productNamesEle = driver.findElements(By.cssSelector("div.cart h3"));
 		List<String> productNames = productNamesEle.stream().map(name -> name.getText()).sorted().collect(Collectors.toList());
 		Assert.assertTrue(sortedItems.equals(productNames));
-		
+		driver.findElement(By.cssSelector(".subtotal button")).click();
 		
 //		driver.quit();
 		
