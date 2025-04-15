@@ -73,6 +73,15 @@ public class e2eTest {
 		Assert.assertTrue(selectedCountry.equalsIgnoreCase(targetCountry));
 		driver.findElement(By.cssSelector(".action__submit")).click();
 		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".hero-primary")));
+		String confirmationMsg = driver.findElement(By.cssSelector(".hero-primary")).getText();
+		Assert.assertTrue(confirmationMsg.equalsIgnoreCase("Thankyou for the order."));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".line-item .m-3 .title")));
+		List<WebElement> orderedProductNamesEle = driver.findElements(By.cssSelector(".line-item .m-3 .title"));
+		List<String> orderedProductNames = orderedProductNamesEle.stream()
+				.map(titleEle -> titleEle.getText()).sorted().collect(Collectors.toList());
+		Assert.assertTrue(orderedProductNames.equals(sortedItems));
+
 //		driver.quit();
 		
 		
