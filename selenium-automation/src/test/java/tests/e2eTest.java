@@ -3,6 +3,7 @@ package tests;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,13 +11,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class e2eTest {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/client");
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
 				
 		driver.findElement(By.id("userEmail")).sendKeys("qwe123@daum.com");
 		driver.findElement(By.id("userPassword")).sendKeys("Qwe123!@");
@@ -24,6 +26,7 @@ public class e2eTest {
 		
 		String[] wishList = {"ZARA COAT 3", "IPHONE 13 PRO"};
 		List<String> selectedItems = Arrays.asList(wishList);
+		List<String> sortedItems = selectedItems.stream().sorted().collect(Collectors.toList());
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		
@@ -53,6 +56,11 @@ public class e2eTest {
 		    });
 		});
 		cartBtn.click();
+		
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.cart h3")));
+		List<WebElement> productNamesEle = driver.findElements(By.cssSelector("div.cart h3"));
+		List<String> productNames = productNamesEle.stream().map(name -> name.getText()).sorted().collect(Collectors.toList());
+		Assert.assertTrue(sortedItems.equals(productNames));
 //		driver.quit();
 		
 		
