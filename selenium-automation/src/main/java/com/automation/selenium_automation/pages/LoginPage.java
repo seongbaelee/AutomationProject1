@@ -2,21 +2,23 @@ package com.automation.selenium_automation.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
 
-import com.automation.selenium_automation.base.Base;
+import com.automation.selenium_automation.utils.Utils;
 
-public class LoginPage extends Base {
+public class LoginPage extends Utils {
 	WebDriver driver;
 	
 	public LoginPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 	
-	public void login(String id, String password) {
+	public HomePage login(String id, String password) {
 		driver.findElement(By.id("userEmail")).sendKeys(id);
 		driver.findElement(By.id("userPassword")).sendKeys(password);
 		driver.findElement(By.id("login")).click();
+		HomePage homePage = new HomePage(driver);
+		return homePage;
 	}
 	
 	public void gotoLoginPage() {

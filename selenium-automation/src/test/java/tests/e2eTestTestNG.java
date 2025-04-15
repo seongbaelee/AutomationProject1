@@ -21,14 +21,11 @@ public class e2eTestTestNG extends Base {
 
 	@Test
 	public void test () {
-//		WebDriver driver = new ChromeDriver();
-//		driver.get("https://rahulshettyacademy.com/client");
 //		driver.manage().window().maximize();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		loginPage.login("qwe123@daum.com", "Qwe123!@");
 		
-		String loginMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".toast-title"))).getText();
+		String loginMessage = loginPage.elementToBeVisibleByLocator(By.cssSelector(".toast-title")).getText();
 		Assert.assertEquals(loginMessage, "Login Successfully");
 		
 //		String[] wishList = {"ZARA COAT 3", "IPHONE 13 PRO"};

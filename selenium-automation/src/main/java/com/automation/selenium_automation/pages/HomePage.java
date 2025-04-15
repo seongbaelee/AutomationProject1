@@ -1,5 +1,14 @@
 package com.automation.selenium_automation.pages;
 
-public class HomePage {
+import org.openqa.selenium.WebDriver;
 
+import com.automation.selenium_automation.utils.Utils;
+
+public class HomePage extends Utils {
+	WebDriver driver;
+
+	public HomePage(WebDriver driver) {
+		super(driver);
+		this.driver = driver;
+	}
 }
