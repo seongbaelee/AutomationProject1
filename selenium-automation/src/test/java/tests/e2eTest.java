@@ -18,7 +18,7 @@ public class e2eTest {
 		// TODO Auto-generated method stub
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/client");
-//		driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
 		driver.findElement(By.id("userEmail")).sendKeys("qwe123@daum.com");
@@ -82,7 +82,8 @@ public class e2eTest {
 				.map(titleEle -> titleEle.getText()).sorted().collect(Collectors.toList());
 		Assert.assertTrue(orderedProductNames.equals(sortedItems));
 
-//		driver.quit();
+		driver.quit();
+		
 		
 		
 	}
