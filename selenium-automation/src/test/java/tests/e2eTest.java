@@ -12,13 +12,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class e2eTest {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/client");
 		driver.manage().window().maximize();
-		
-		
+				
 		driver.findElement(By.id("userEmail")).sendKeys("qwe123@daum.com");
 		driver.findElement(By.id("userPassword")).sendKeys("Qwe123!@");
 		driver.findElement(By.id("login")).click();
@@ -34,10 +33,26 @@ public class e2eTest {
 			String itemName = item.findElement(By.tagName("h5")).getText();
 			return selectedItems.contains(itemName);
 		}).forEach(item -> {
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".ngx-spinner-overlay")));
-			item.findElement(By.cssSelector("button:last-of-type")).click();
+			WebElement addCartBtn = item.findElement(By.cssSelector("button:last-of-type"));
+			wait.until(x -> {
+			    List<WebElement> overlays = x.findElements(By.cssSelector(".ngx-spinner-overlay"));
+			    return overlays.isEmpty() || overlays.stream().allMatch(o -> {
+			        String style = o.getDomProperty("style");
+			        return style.contains("opacity: 0") || style.contains("display: none") || style.contains("visibility: hidden");
+			    });
+			});
+			addCartBtn.click();
 		});
 		
+		WebElement cartBtn = driver.findElement(By.cssSelector("button[routerlink*='cart']"));
+		wait.until(x -> {
+		    List<WebElement> overlays = x.findElements(By.cssSelector(".ngx-spinner-overlay"));
+		    return overlays.isEmpty() || overlays.stream().allMatch(o -> {
+		        String style = o.getDomProperty("style");
+		        return style.contains("opacity: 0") || style.contains("display: none") || style.contains("visibility: hidden");
+		    });
+		});
+		cartBtn.click();
 //		driver.quit();
 		
 		
