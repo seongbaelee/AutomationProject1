@@ -19,17 +19,18 @@ public class e2eTest {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/client");
 //		driver.manage().window().maximize();
-				
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
 		driver.findElement(By.id("userEmail")).sendKeys("qwe123@daum.com");
 		driver.findElement(By.id("userPassword")).sendKeys("Qwe123!@");
 		driver.findElement(By.id("login")).click();
+		String loginMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".toast-title"))).getText();
+		Assert.assertEquals(loginMessage, "Login Successfully");
 		
 		String[] wishList = {"ZARA COAT 3", "IPHONE 13 PRO"};
 		List<String> selectedItems = Arrays.asList(wishList);
 		List<String> sortedItems = selectedItems.stream().sorted().collect(Collectors.toList());
-		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		
+				
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".container div.row div.card-body")));
 		List<WebElement> itemList = driver.findElements(By.cssSelector(".container div.row div.card-body"));
 		itemList.stream().filter(item -> {
@@ -61,6 +62,8 @@ public class e2eTest {
 		List<WebElement> productNamesEle = driver.findElements(By.cssSelector("div.cart h3"));
 		List<String> productNames = productNamesEle.stream().map(name -> name.getText()).sorted().collect(Collectors.toList());
 		Assert.assertTrue(sortedItems.equals(productNames));
+		
+		
 //		driver.quit();
 		
 		
