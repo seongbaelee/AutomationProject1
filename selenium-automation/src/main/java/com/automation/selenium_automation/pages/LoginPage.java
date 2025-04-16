@@ -27,6 +27,7 @@ public class LoginPage extends Utils {
 	WebElement login;
 	
 	By success = By.cssSelector(".toast-title");
+	By error = By.cssSelector(".toast-error");
 	
 	public Object[] login(String id, String password) {
 		email.sendKeys(id);
@@ -36,6 +37,14 @@ public class LoginPage extends Utils {
 		String loginMessage = elementToBeVisibleByLocator(success).getText();
 		HomePage homePage = new HomePage(driver);
 		return new Object[] {loginMessage, homePage};
+	}
+	
+	public String invalidLogin(String id, String password) {
+		email.sendKeys(id);
+		userPassword.sendKeys(password);
+		login.click();
+		String InvalidMessage = elementToBeVisibleByLocator(error).getText();
+		return InvalidMessage;
 	}
 	
 	public void gotoLoginPage() {
