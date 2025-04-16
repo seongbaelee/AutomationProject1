@@ -1,6 +1,7 @@
 package com.automation.selenium_automation.utils;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,5 +20,18 @@ public class Utils {
 	
 	public WebElement elementToBeVisibleByLocator(By locator) {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+	
+	public List<WebElement> elementAllToBeVisibleByLocator(By locator) {
+		return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+	}
+	
+	public void waitForOverlayToDisappear(By locator) {
+	    try {
+	        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+	        Thread.sleep(300); 
+	    } catch (InterruptedException e) {
+	        e.printStackTrace();
+	    }
 	}
 }

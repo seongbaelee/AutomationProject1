@@ -29,11 +29,10 @@ public class LoginPage extends Utils {
 	By success = By.cssSelector(".toast-title");
 	By error = By.cssSelector(".toast-error");
 	
-	public Object[] login(String id, String password) {
+	public Object[] validLogin(String id, String password) {
 		email.sendKeys(id);
 		userPassword.sendKeys(password);
 		login.click();
-		
 		String loginMessage = elementToBeVisibleByLocator(success).getText();
 		HomePage homePage = new HomePage(driver);
 		return new Object[] {loginMessage, homePage};

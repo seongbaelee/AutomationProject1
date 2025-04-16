@@ -1,21 +1,14 @@
 package tests;
 
-import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.automation.selenium_automation.base.Base;
-import com.automation.selenium_automation.pages.LoginPage;
+import com.automation.selenium_automation.pages.HomePage;
 
 public class e2eTestTestNG extends Base {
 
@@ -23,14 +16,15 @@ public class e2eTestTestNG extends Base {
 	public void test () {
 //		driver.manage().window().maximize();
 
-		Object[] loginResult = loginPage.login("qwe123@daum.com", "Qwe123!@");
-		
+		Object[] loginResult = loginPage.validLogin("qwe123@daum.com", "Qwe123!@");
 		Assert.assertEquals(loginResult[0], "Login Successfully");
+		HomePage homepage = (HomePage) loginResult[1];
 		
-//		String[] wishList = {"ZARA COAT 3", "IPHONE 13 PRO"};
-//		List<String> selectedItems = Arrays.asList(wishList);
-//		List<String> sortedItems = selectedItems.stream().sorted().collect(Collectors.toList());
-//				
+		List<String> selectedItems = Arrays.asList("ZARA COAT 3", "IPHONE 13 PRO")
+				.stream()
+				.sorted()
+				.collect(Collectors.toList());
+		homepage.addItemsToCart(selectedItems);
 //		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".container div.row div.card-body")));
 //		List<WebElement> itemList = driver.findElements(By.cssSelector(".container div.row div.card-body"));
 //		itemList.stream().filter(item -> {
