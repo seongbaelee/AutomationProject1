@@ -23,10 +23,9 @@ public class e2eTestTestNG extends Base {
 	public void test () {
 //		driver.manage().window().maximize();
 
-		loginPage.login("qwe123@daum.com", "Qwe123!@");
+		Object[] loginResult = loginPage.login("qwe123@daum.com", "Qwe123!@");
 		
-		String loginMessage = loginPage.elementToBeVisibleByLocator(By.cssSelector(".toast-title")).getText();
-		Assert.assertEquals(loginMessage, "Login Successfully");
+		Assert.assertEquals(loginResult[0], "Login Successfully");
 		
 //		String[] wishList = {"ZARA COAT 3", "IPHONE 13 PRO"};
 //		List<String> selectedItems = Arrays.asList(wishList);

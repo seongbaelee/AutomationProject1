@@ -13,12 +13,14 @@ public class LoginPage extends Utils {
 		this.driver = driver;
 	}
 	
-	public HomePage login(String id, String password) {
+	public Object[] login(String id, String password) {
 		driver.findElement(By.id("userEmail")).sendKeys(id);
 		driver.findElement(By.id("userPassword")).sendKeys(password);
 		driver.findElement(By.id("login")).click();
+		
+		String loginMessage = elementToBeVisibleByLocator(By.cssSelector(".toast-title")).getText();
 		HomePage homePage = new HomePage(driver);
-		return homePage;
+		return new Object[] {loginMessage, homePage};
 	}
 	
 	public void gotoLoginPage() {
