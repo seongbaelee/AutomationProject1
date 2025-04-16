@@ -1,6 +1,5 @@
 package com.automation.selenium_automation.pages;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -23,6 +22,9 @@ public class HomePage extends Utils {
 	@FindBy(css=".container div.row div.card-body")
 	List<WebElement> productsEle;
 	
+	@FindBy(css="button[routerlink*='cart']")
+	WebElement cartBtn;
+	
 	By productsContentLocator = By.cssSelector(".container div.row div.card-body");
 	By addBtnLocator = By.cssSelector("button:last-of-type");
 	By overlayLocator = By.cssSelector(".ngx-spinner-overlay");
@@ -37,5 +39,12 @@ public class HomePage extends Utils {
 			waitForOverlayToDisappear(overlayLocator);
 			addCartBtn.click();
 		});
+	}
+	
+	public CartPage clickToCart() {
+		waitForOverlayToDisappear(overlayLocator);
+	    cartBtn.click();
+	    CartPage cartPage = new CartPage(driver);
+	    return cartPage;
 	}
 }

@@ -25,32 +25,8 @@ public class e2eTestTestNG extends Base {
 				.sorted()
 				.collect(Collectors.toList());
 		homepage.addItemsToCart(selectedItems);
-//		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".container div.row div.card-body")));
-//		List<WebElement> itemList = driver.findElements(By.cssSelector(".container div.row div.card-body"));
-//		itemList.stream().filter(item -> {
-//			String itemName = item.findElement(By.tagName("h5")).getText();
-//			return selectedItems.contains(itemName);
-//		}).forEach(item -> {
-//			WebElement addCartBtn = item.findElement(By.cssSelector("button:last-of-type"));
-//			wait.until(x -> {
-//			    List<WebElement> overlays = x.findElements(By.cssSelector(".ngx-spinner-overlay"));
-//			    return overlays.isEmpty() || overlays.stream().allMatch(o -> {
-//			        String style = o.getDomProperty("style");
-//			        return style.contains("opacity: 0") || style.contains("display: none") || style.contains("visibility: hidden");
-//			    });
-//			});
-//			addCartBtn.click();
-//		});
-//		
-//		WebElement cartBtn = driver.findElement(By.cssSelector("button[routerlink*='cart']"));
-//		wait.until(x -> {
-//		    List<WebElement> overlays = x.findElements(By.cssSelector(".ngx-spinner-overlay"));
-//		    return overlays.isEmpty() || overlays.stream().allMatch(o -> {
-//		        String style = o.getDomProperty("style");
-//		        return style.contains("opacity: 0") || style.contains("display: none") || style.contains("visibility: hidden");
-//		    });
-//		});
-//		cartBtn.click();
+
+		homepage.clickToCart();
 //		
 //		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.cart h3")));
 //		List<WebElement> productNamesEle = driver.findElements(By.cssSelector("div.cart h3"));

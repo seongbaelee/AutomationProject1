@@ -12,26 +12,35 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Utils {
 	WebDriverWait wait;
 	WebDriver driver;
-	
+
 	public Utils(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	}
-	
+
 	public WebElement elementToBeVisibleByLocator(By locator) {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
-	
+
 	public List<WebElement> elementAllToBeVisibleByLocator(By locator) {
 		return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 	}
 	
+	public WebElement elementToBeClickableByLocator(By locator) {
+		return wait.until(ExpectedConditions.elementToBeClickable(locator));
+	}
+
 	public void waitForOverlayToDisappear(By locator) {
-	    try {
-	        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-	        Thread.sleep(300); 
-	    } catch (InterruptedException e) {
-	        e.printStackTrace();
+		int maxAttempts = 6;  
+	    for (int i = 0; i < maxAttempts; i++) {
+	        try {
+	            wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));   
+	        } catch (Exception e) {
+	            if (i == maxAttempts - 1) {
+	                throw new RuntimeException("Overlay did not disappear after " + maxAttempts + " attempts");
+	            }
+	        }
 	    }
+
 	}
 }
