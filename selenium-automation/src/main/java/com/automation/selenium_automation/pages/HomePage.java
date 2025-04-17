@@ -30,7 +30,7 @@ public class HomePage extends Utils {
 	By overlayLocator = By.cssSelector(".ngx-spinner-overlay");
 
 	public void addItemsToCart (List<String> selectedItems) {
-			elementAllToBeVisibleByLocator(productsContentLocator);
+			waitElementAllToBeVisibleByLocator(productsContentLocator);
 			productsEle.stream().filter(productEle -> {
 			String productName = productEle.findElement(By.tagName("h5")).getText();
 			return selectedItems.contains(productName);

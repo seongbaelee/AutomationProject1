@@ -18,15 +18,15 @@ public class Utils {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	}
 
-	public WebElement elementToBeVisibleByLocator(By locator) {
+	public WebElement waitElementToBeVisibleByLocator(By locator) {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 
-	public List<WebElement> elementAllToBeVisibleByLocator(By locator) {
+	public List<WebElement> waitElementAllToBeVisibleByLocator(By locator) {
 		return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 	}
 	
-	public WebElement elementToBeClickableByLocator(By locator) {
+	public WebElement waitElementToBeClickableByLocator(By locator) {
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
