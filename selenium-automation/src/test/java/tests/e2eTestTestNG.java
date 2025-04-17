@@ -8,6 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.automation.selenium_automation.base.Base;
+import com.automation.selenium_automation.pages.CartPage;
+import com.automation.selenium_automation.pages.CheckoutPage;
 import com.automation.selenium_automation.pages.HomePage;
 
 public class e2eTestTestNG extends Base {
@@ -26,13 +28,10 @@ public class e2eTestTestNG extends Base {
 				.collect(Collectors.toList());
 		homepage.addItemsToCart(selectedItems);
 
-		homepage.clickToCart();
-//		
-//		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.cart h3")));
-//		List<WebElement> productNamesEle = driver.findElements(By.cssSelector("div.cart h3"));
-//		List<String> productNames = productNamesEle.stream().map(name -> name.getText()).sorted().collect(Collectors.toList());
-//		Assert.assertTrue(sortedItems.equals(productNames));
-//		driver.findElement(By.cssSelector(".subtotal button")).click();
+		CartPage cartpage = homepage.clickToCart();
+		List<String> productTitles =cartpage.getProductTitles();
+		Assert.assertTrue(selectedItems.equals(productTitles));
+		CheckoutPage checkoutpage = cartpage.clickCheckOut();
 //		
 //		String targetCountry = "Canada";
 //		WebElement countryBtnEle = driver.findElement(By.cssSelector(".user__address input"));
