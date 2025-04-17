@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import com.automation.selenium_automation.base.Base;
 import com.automation.selenium_automation.pages.CartPage;
 import com.automation.selenium_automation.pages.CheckoutPage;
+import com.automation.selenium_automation.pages.ConfirmationPage;
 import com.automation.selenium_automation.pages.HomePage;
 
 public class e2eTestTestNG extends Base {
@@ -32,15 +33,13 @@ public class e2eTestTestNG extends Base {
 		List<String> productTitles =cartpage.getProductTitles();
 		Assert.assertTrue(selectedItems.equals(productTitles));
 		CheckoutPage checkoutpage = cartpage.clickCheckOut();
-//		
-//		String targetCountry = "Canada";
-//		WebElement countryBtnEle = driver.findElement(By.cssSelector(".user__address input"));
-//		countryBtnEle.sendKeys("can");
-//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".list-group")));
-//		driver.findElement(By.xpath("//span[contains(text() , '" + targetCountry + "')]")).click();
-//		String selectedCountry = countryBtnEle.getDomProperty("value");
-//		Assert.assertTrue(selectedCountry.equalsIgnoreCase(targetCountry));
-//		driver.findElement(By.cssSelector(".action__submit")).click();
+		
+		String initLetters = "Can";
+		String targetCountry = "Canada";
+		String selectedCountry = checkoutpage.selectCountry(initLetters, targetCountry);
+		
+		Assert.assertTrue(selectedCountry.equalsIgnoreCase(targetCountry));
+		ConfirmationPage confirmationpage = checkoutpage.clickOrderBtn();
 //		
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".hero-primary")));
 //		String confirmationMsg = driver.findElement(By.cssSelector(".hero-primary")).getText();
