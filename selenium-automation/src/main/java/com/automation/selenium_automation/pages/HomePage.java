@@ -23,7 +23,7 @@ public class HomePage extends Utils {
 	List<WebElement> productsEle;
 	
 	@FindBy(css="button[routerlink*='cart']")
-	WebElement cartBtn;
+	WebElement cartBtnEle;
 	
 	By productsContentLocator = By.cssSelector(".container div.row div.card-body");
 	By addBtnLocator = By.cssSelector("button:last-of-type");
@@ -43,7 +43,7 @@ public class HomePage extends Utils {
 	
 	public CartPage clickToCart() {
 		waitForOverlayToDisappear(overlayLocator);
-	    cartBtn.click();
+		cartBtnEle.click();
 	    CartPage cartPage = new CartPage(driver);
 	    return cartPage;
 	}

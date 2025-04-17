@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-17T00:11:57 EDT" name="Default suite" finished-at="2025-04-17T00:12:07 EDT" duration-ms="10139">
+  <suite started-at="2025-04-17T01:16:53 EDT" name="Default suite" finished-at="2025-04-17T01:17:04 EDT" duration-ms="10977">
     <groups>
     </groups>
-    <test started-at="2025-04-17T00:11:57 EDT" name="Default test" finished-at="2025-04-17T00:12:07 EDT" duration-ms="10139">
+    <test started-at="2025-04-17T01:16:53 EDT" name="Default test" finished-at="2025-04-17T01:17:04 EDT" duration-ms="10977">
       <class name="tests.e2eTestTestNG">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:tests.e2eTestTestNG@30c15d8b]" started-at="2025-04-17T00:11:57 EDT" name="launchApp" finished-at="2025-04-17T00:12:01 EDT" duration-ms="4120" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:tests.e2eTestTestNG@30c15d8b]" started-at="2025-04-17T01:16:53 EDT" name="launchApp" finished-at="2025-04-17T01:16:57 EDT" duration-ms="4206" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="test()[pri:0, instance:tests.e2eTestTestNG@30c15d8b]" started-at="2025-04-17T00:12:01 EDT" name="test" finished-at="2025-04-17T00:12:07 EDT" duration-ms="5984" status="PASS">
+        <test-method signature="test()[pri:0, instance:tests.e2eTestTestNG@30c15d8b]" started-at="2025-04-17T01:16:57 EDT" name="test" finished-at="2025-04-17T01:17:04 EDT" duration-ms="6587" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method is-config="true" signature="quitWebsite()[pri:0, instance:tests.e2eTestTestNG@30c15d8b]" started-at="2025-04-17T00:12:07 EDT" name="quitWebsite" finished-at="2025-04-17T00:12:07 EDT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="quitWebsite()[pri:0, instance:tests.e2eTestTestNG@30c15d8b]" started-at="2025-04-17T01:17:04 EDT" name="quitWebsite" finished-at="2025-04-17T01:17:04 EDT" duration-ms="148" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitWebsite -->

@@ -21,7 +21,7 @@ public class CheckoutPage extends Utils {
 	WebElement countryBtnEle;
 	
 	@FindBy(css =".action__submit")
-	WebElement orderBtn;
+	WebElement orderBtnEle;
 	
 	By countryModalLocator = By.cssSelector(".list-group");
 		
@@ -34,7 +34,7 @@ public class CheckoutPage extends Utils {
 	}
 	
 	public ConfirmationPage clickOrderBtn() {
-		orderBtn.click();
+		orderBtnEle.click();
 		ConfirmationPage confirmationpage = new ConfirmationPage(driver);
 		return confirmationpage;
 	}

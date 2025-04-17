@@ -18,30 +18,30 @@ public class LoginPage extends Utils {
 	}
 	
 	@FindBy(id="userEmail")
-	WebElement email;
+	WebElement emailEle;
 	
 	@FindBy(id="userPassword")
-	WebElement userPassword;
+	WebElement userPasswordEle;
 	
 	@FindBy(id="login")
-	WebElement login;
+	WebElement loginEle;
 	
 	By success = By.cssSelector(".toast-title");
 	By error = By.cssSelector(".toast-error");
 	
 	public Object[] validLogin(String id, String password) {
-		email.sendKeys(id);
-		userPassword.sendKeys(password);
-		login.click();
+		emailEle.sendKeys(id);
+		userPasswordEle.sendKeys(password);
+		loginEle.click();
 		String loginMessage = waitElementToBeVisibleByLocator(success).getText();
 		HomePage homePage = new HomePage(driver);
 		return new Object[] {loginMessage, homePage};
 	}
 	
 	public String invalidLogin(String id, String password) {
-		email.sendKeys(id);
-		userPassword.sendKeys(password);
-		login.click();
+		emailEle.sendKeys(id);
+		userPasswordEle.sendKeys(password);
+		loginEle.click();
 		String InvalidMessage = waitElementToBeVisibleByLocator(error).getText();
 		return InvalidMessage;
 	}
