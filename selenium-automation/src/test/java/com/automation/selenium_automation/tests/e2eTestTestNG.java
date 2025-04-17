@@ -16,7 +16,7 @@ import com.automation.selenium_automation.pages.HomePage;
 public class e2eTestTestNG extends Base {
 
 	@Test
-	public void test () {
+	public void e2eTest () {
 //		driver.manage().window().maximize();
 
 		Object[] loginResult = loginPage.validLogin("qwe123@daum.com", "Qwe123!@");
@@ -44,5 +44,12 @@ public class e2eTestTestNG extends Base {
 		Assert.assertTrue(confirmationText.equalsIgnoreCase("Thankyou for the order."));
 		List<String> orderedProductTitles = confirmationpage.getProductTitles();
 		Assert.assertTrue(orderedProductTitles.equals(selectedItems));
+	}
+	
+	public void data() {
+		String[][] data = new String[2][3];
+		
+		data[0][0] = "1";
+		
 	}
 }

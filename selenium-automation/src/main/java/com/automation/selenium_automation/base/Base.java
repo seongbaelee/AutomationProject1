@@ -1,19 +1,19 @@
 package com.automation.selenium_automation.base;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.automation.selenium_automation.pages.LoginPage;
+import com.automation.selenium_automation.utils.Utils;
 
 public class Base {
 	public WebDriver driver;
-	public LoginPage loginPage;
+	public LoginPage loginPage;	
 	
 	public WebDriver initializeDriver() {
 		String browserName = "Chrome";

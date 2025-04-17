@@ -1,0 +1,14 @@
+[
+	{
+		"email" : "qwe123@daum.com",
+		"password" : "Qwe123!@",
+		"productName" : ["ADIDAS ORIGINAL", "IPHONE 13 PRO"]
+	},
+	
+	{
+		"email" : "qwe1233@daum.com",
+		"password" : "Qwe123!@",
+		"productName" : ["ZARA COAT 3", "ADIDAS ORIGINAL"]
+	}
+	
+]
