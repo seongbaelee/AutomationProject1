@@ -1,4 +1,4 @@
-package tests;
+package com.automation.selenium_automation.tests;
 
 import java.time.Duration;
 import java.util.Arrays;

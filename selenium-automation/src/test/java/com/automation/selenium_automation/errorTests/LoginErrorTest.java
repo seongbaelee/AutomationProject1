@@ -1,4 +1,4 @@
-package errorTests;
+package com.automation.selenium_automation.errorTests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

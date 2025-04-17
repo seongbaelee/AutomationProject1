@@ -1,4 +1,4 @@
-package tests;
+package com.automation.selenium_automation.tests;
 
 import java.util.Arrays;
 import java.util.List;
