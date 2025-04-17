@@ -30,7 +30,7 @@ public class CartPage extends Utils{
 	By checkoutLocator = By.cssSelector(".subtotal button");
 		
 	public List<String> getProductTitles() {
-		waitElementAllToBeVisibleByLocator(ProductTitlesLocator);
+		waitElementAllToAppearByLocator(ProductTitlesLocator);
 		List<String> productTitles = productTitlesEle.stream().map(name -> name.getText()).sorted().collect(Collectors.toList());
 		return productTitles;
 	}

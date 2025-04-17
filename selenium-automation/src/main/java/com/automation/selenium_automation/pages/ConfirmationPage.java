@@ -29,12 +29,12 @@ public class ConfirmationPage extends Utils {
 	By confirmationTextLocator = By.cssSelector(".hero-primary");
 	By productTitleLocator = By.cssSelector(".line-item .m-3 .title");
 	public String getConfirmationText() {
-		waitElementToBeVisibleByLocator(confirmationTextLocator);
+		waitElementToAppearByLocator(confirmationTextLocator);
 		return confirmationTextEle.getText();
 	}
 	
 	public List<String> getProductTitles() {
-		waitElementAllToBeVisibleByLocator(productTitleLocator);
+		waitElementAllToAppearByLocator(productTitleLocator);
 		List<String> productTitles = productTitlesEle.stream()
 				.map(titleEle -> titleEle.getText()).sorted().collect(Collectors.toList());
 		return productTitles;

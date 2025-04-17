@@ -33,7 +33,8 @@ public class LoginPage extends Utils {
 		emailEle.sendKeys(id);
 		userPasswordEle.sendKeys(password);
 		loginEle.click();
-		String loginMessage = waitElementToBeVisibleByLocator(success).getText();
+		String loginMessage = waitElementToAppearByLocator(success).getText();
+		waitElementToDisapearByLocator(success);
 		HomePage homePage = new HomePage(driver);
 		return new Object[] {loginMessage, homePage};
 	}
@@ -42,7 +43,7 @@ public class LoginPage extends Utils {
 		emailEle.sendKeys(id);
 		userPasswordEle.sendKeys(password);
 		loginEle.click();
-		String InvalidMessage = waitElementToBeVisibleByLocator(error).getText();
+		String InvalidMessage = waitElementToAppearByLocator(error).getText();
 		return InvalidMessage;
 	}
 	

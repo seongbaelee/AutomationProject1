@@ -27,22 +27,23 @@ public class HomePage extends Utils {
 	
 	By productsContentLocator = By.cssSelector(".container div.row div.card-body");
 	By addBtnLocator = By.cssSelector("button:last-of-type");
-	By overlayLocator = By.cssSelector(".ngx-spinner-overlay");
+	By overlayLocator = By.cssSelector(".ng-animating");
+	By toastLocator = By.cssSelector("[role='alert']");
 
 	public void addItemsToCart (List<String> selectedItems) {
-			waitElementAllToBeVisibleByLocator(productsContentLocator);
+			waitElementAllToAppearByLocator(productsContentLocator);
 			productsEle.stream().filter(productEle -> {
 			String productName = productEle.findElement(By.tagName("h5")).getText();
 			return selectedItems.contains(productName);
 		}).forEach(productEle -> {
 			WebElement addCartBtn = productEle.findElement(addBtnLocator);
-			waitForOverlayToDisappear(overlayLocator);
 			addCartBtn.click();
+			waitElementToAppearAndDisappear(overlayLocator);
+			waitElementToAppearAndDisappear(toastLocator);
 		});
 	}
 	
 	public CartPage clickToCart() {
-		waitForOverlayToDisappear(overlayLocator);
 		cartBtnEle.click();
 	    CartPage cartPage = new CartPage(driver);
 	    return cartPage;

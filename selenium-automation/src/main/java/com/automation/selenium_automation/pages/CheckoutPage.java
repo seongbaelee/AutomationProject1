@@ -27,7 +27,7 @@ public class CheckoutPage extends Utils {
 		
 	public String selectCountry(String initLetters, String targetCountry) {
 		countryBtnEle.sendKeys(initLetters);
-		waitElementToBeVisibleByLocator(countryModalLocator);
+		waitElementToAppearByLocator(countryModalLocator);
 		driver.findElement(By.xpath("//span[contains(text() , '" + targetCountry + "')]")).click();
 		String selectedCountry = countryBtnEle.getDomProperty("value");
 		return selectedCountry;

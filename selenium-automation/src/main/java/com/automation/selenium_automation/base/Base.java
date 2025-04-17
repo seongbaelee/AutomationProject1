@@ -42,6 +42,6 @@ public class Base {
 	
 	@AfterMethod
 	public void quitWebsite() {
-		driver.quit();
+//		driver.quit();
 	}
 }
