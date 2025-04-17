@@ -1,10 +1,13 @@
 package com.automation.selenium_automation.tests;
 
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.automation.selenium_automation.base.Base;
@@ -12,23 +15,25 @@ import com.automation.selenium_automation.pages.CartPage;
 import com.automation.selenium_automation.pages.CheckoutPage;
 import com.automation.selenium_automation.pages.ConfirmationPage;
 import com.automation.selenium_automation.pages.HomePage;
+import com.automation.selenium_automation.utils.Utils;
 
 public class e2eTestTestNG extends Base {
 
-	@Test
-	public void e2eTest () {
+	@Test(dataProvider="getData")
+	public void e2eTest (HashMap<String, Object> input) {
 //		driver.manage().window().maximize();
 
-		Object[] loginResult = loginPage.validLogin("qwe123@daum.com", "Qwe123!@");
+		Object[] loginResult = loginPage.validLogin((String) input.get("email"), (String) input.get("password"));
 		Assert.assertEquals(loginResult[0], "Login Successfully");
 		HomePage homepage = (HomePage) loginResult[1];
 		
-		List<String> selectedItems = Arrays.asList("ZARA COAT 3", "IPHONE 13 PRO")
+		List<String> selectedItems = ((List<String>) input.get("products"))
 				.stream()
 				.sorted()
 				.collect(Collectors.toList());
 		homepage.addItemsToCart(selectedItems);
 		CartPage cartpage = homepage.clickToCart();
+		System.out.println(selectedItems);
 		
 		List<String> productTitles =cartpage.getProductTitles();
 		Assert.assertTrue(selectedItems.equals(productTitles));
@@ -46,10 +51,11 @@ public class e2eTestTestNG extends Base {
 		Assert.assertTrue(orderedProductTitles.equals(selectedItems));
 	}
 	
-	public void data() {
-		String[][] data = new String[2][3];
-		
-		data[0][0] = "1";
+	@DataProvider
+	public Object[][] getData() throws IOException {
+		List<HashMap<String, Object>> data = Utils.getJsonDataToMap(
+				System.getProperty("user.dir") + "/src/test/java/com/automation/selenium_automation/data/info.json");
+		return new Object[][] { { data.get(0) }, { data.get(1) } };
 		
 	}
 }
