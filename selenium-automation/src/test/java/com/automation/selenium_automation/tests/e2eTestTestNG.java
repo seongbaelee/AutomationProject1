@@ -10,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.automation.selenium_automation.base.Base;
+import com.automation.selenium_automation.helpers.Base;
 import com.automation.selenium_automation.pages.CartPage;
 import com.automation.selenium_automation.pages.CheckoutPage;
 import com.automation.selenium_automation.pages.ConfirmationPage;

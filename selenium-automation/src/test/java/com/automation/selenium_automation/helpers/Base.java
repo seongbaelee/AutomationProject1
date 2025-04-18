@@ -1,4 +1,4 @@
-package com.automation.selenium_automation.base;
+package com.automation.selenium_automation.helpers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,7 +32,7 @@ public class Base {
 		return driver;
 	}
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public LoginPage launchApp() {
 		driver = initializeDriver();
 		loginPage = new LoginPage(driver);
@@ -40,7 +40,7 @@ public class Base {
 		return loginPage;
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void quitWebsite() {
 		driver.quit();
 	}

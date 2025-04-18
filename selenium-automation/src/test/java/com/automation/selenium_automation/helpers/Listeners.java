@@ -1,4 +1,4 @@
-package com.automation.selenium_automation.listeners;
+package com.automation.selenium_automation.helpers;
 
 import java.io.IOException;
 
@@ -7,7 +7,6 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.automation.selenium_automation.base.Base;
 import com.automation.selenium_automation.utils.Utils;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
