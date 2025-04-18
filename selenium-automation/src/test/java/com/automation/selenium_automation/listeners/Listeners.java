@@ -16,23 +16,27 @@ import com.aventstack.extentreports.Status;
 public class Listeners extends Base implements ITestListener {
 	ExtentTest test;
 	ExtentReports extent = Utils.getReportObject();
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); //used to make safe override issue on parallel test
 	
 	@Override
     public void onTestStart(ITestResult result) {
 //        System.out.println("Test Started: " + result.getName());
 		test = extent.createTest(result.getMethod().getMethodName());
+		extentTest.set(test);
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
 //        System.out.println("Test Passed: " + result.getName());
-    	test.log(Status.PASS, "Test Passed");
+//    	test.log(Status.PASS, "Test Passed");
+    	extentTest.get().log(Status.PASS, "Test Passed");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
 //        System.out.println("Test Failed: " + result.getName());
-    	test.fail(result.getThrowable());
+//    	test.fail(result.getThrowable());
+    	extentTest.get().fail(result.getThrowable());
     	
     	try {
     		driver = (WebDriver) result.getTestClass().getRealClass().getField("driver")
@@ -49,8 +53,8 @@ public class Listeners extends Base implements ITestListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-    	test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
+		extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
+//    	test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
     	//screenshot
     }
 

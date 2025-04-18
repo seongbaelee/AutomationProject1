@@ -7,10 +7,16 @@ import com.automation.selenium_automation.base.Base;
 
 public class LoginErrorTest extends Base {
 	
-	@Test
-	public void errorTest() {
-		String errorMessage = loginPage.invalidLogin("we123@daum.com", "Qwe123!!");
+	@Test(groups= {"ErrorHandling"})
+	public void invalidAccountTest() {
+		String errorMessage = loginPage.invalidLogin("qwe123@daum.com", "Qwe123!!");
 		System.out.println(errorMessage);
 		Assert.assertEquals(errorMessage, "Incorrect email or password.");
+	}
+	
+	public void NotCorrectToastMessage() {
+		String errorMessage = loginPage.invalidLogin("qwe123@daum.com", "Qwe123!!");
+		System.out.println(errorMessage);
+		Assert.assertEquals(errorMessage, "Incorrect banana or password.");
 	}
 }
