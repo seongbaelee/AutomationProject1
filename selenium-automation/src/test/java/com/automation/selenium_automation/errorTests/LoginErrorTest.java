@@ -9,7 +9,7 @@ public class LoginErrorTest extends Base {
 	
 	@Test
 	public void errorTest() {
-		String errorMessage = loginPage.invalidLogin("we123@daum.com", "Qwe123!@");
+		String errorMessage = loginPage.invalidLogin("we123@daum.com", "Qwe123!!");
 		System.out.println(errorMessage);
 		Assert.assertEquals(errorMessage, "Incorrect email or password.");
 	}
