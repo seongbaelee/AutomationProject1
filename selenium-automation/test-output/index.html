@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\Seongbaelee\Desktop\AutomationProject\project1\selenium-automation\testSuites\ErrorValidation.xml</span>
+                    <span>C:\Users\Seongbaelee\Desktop\AutomationProject\project1\selenium-automation\testSuites\E2nProcess.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Suite" class="navigator-link ">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,12 +103,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.automation.selenium_automation.tests.ErrorValidations" class="method navigator-link" hash-for-method="loginErrorValidation">loginErrorValidation</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.automation.selenium_automation.tests.E2eTestTestNG" class="method navigator-link" hash-for-method="e2eTest({password=Qwe123!@, email=qwe123@daum.com, products=[ZARA COAT 3, IPHONE 13 PRO]})">e2eTest({password=Qwe123!@, email=qwe123@daum.com, products=[ZARA COAT 3, IPHONE 13 PRO]})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.automation.selenium_automation.tests.ErrorValidations" class="method navigator-link" hash-for-method="orderErrorValidation">orderErrorValidation</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.automation.selenium_automation.tests.E2eTestTestNG" class="method navigator-link" hash-for-method="e2eTest({password=Qwe123!@, email=qwe1233@daum.com, products=[ADIDAS ORIGINAL, ZARA COAT 3]})">e2eTest({password=Qwe123!@, email=qwe1233@daum.com, products=[ADIDAS ORIGINAL, ZARA COAT 3]})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -126,21 +126,23 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.automation.selenium_automation.tests.ErrorValidations</span>
+              <span class="class-name">com.automation.selenium_automation.tests.E2eTestTestNG</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginErrorValidation">
-                  </a> <!-- loginErrorValidation -->
-                  <span class="method-name">loginErrorValidation</span>
+                  <a name="e2eTest({password=Qwe123!@, email=qwe123@daum.com, products=[ZARA COAT 3, IPHONE 13 PRO]})">
+                  </a> <!-- e2eTest({password=Qwe123!@, email=qwe123@daum.com, products=[ZARA COAT 3, IPHONE 13 PRO]}) -->
+                  <span class="method-name">e2eTest</span>
+                  <span class="parameters">({password=Qwe123!@, email=qwe123@daum.com, products=[ZARA COAT 3, IPHONE 13 PRO]})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="orderErrorValidation">
-                  </a> <!-- orderErrorValidation -->
-                  <span class="method-name">orderErrorValidation</span>
+                  <a name="e2eTest({password=Qwe123!@, email=qwe1233@daum.com, products=[ADIDAS ORIGINAL, ZARA COAT 3]})">
+                  </a> <!-- e2eTest({password=Qwe123!@, email=qwe1233@daum.com, products=[ADIDAS ORIGINAL, ZARA COAT 3]}) -->
+                  <span class="method-name">e2eTest</span>
+                  <span class="parameters">({password=Qwe123!@, email=qwe1233@daum.com, products=[ADIDAS ORIGINAL, ZARA COAT 3]})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -148,23 +150,21 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Seongbaelee\Desktop\AutomationProject\project1\selenium-automation\testSuites\ErrorValidation.xml</span>
+            <span class="header-content">C:\Users\Seongbaelee\Desktop\AutomationProject\project1\selenium-automation\testSuites\E2nProcess.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;groups&gt;
-  &lt;/groups&gt;
+&lt;suite parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.automation.selenium_automation.helpers.Listeners&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Error Validation&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;end to end test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.automation.selenium_automation.tests.ErrorValidations&quot;/&gt;
+      &lt;class name=&quot;com.automation.selenium_automation.tests.E2eTestTestNG&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Error Validation --&gt;
+  &lt;/test&gt; &lt;!-- end to end test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -176,7 +176,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Error Validation (1 class)</span>
+                <span class="test-name">end to end test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -186,18 +186,6 @@
             <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">ErrorHandling</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">loginErrorValidation</span>
-                <br/>
-              </div> <!-- method-in-group -->
-              <div class="method-in-group">
-                <span class="method-in-group-name">orderErrorValidation</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -216,18 +204,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'orderErrorValidation')
-data.setCell(0, 2, 'com.automation.selenium_automation.tests.ErrorValidations')
-data.setCell(0, 3, 3133);
+data.setCell(0, 1, 'e2eTest')
+data.setCell(0, 2, 'com.automation.selenium_automation.tests.E2eTestTestNG')
+data.setCell(0, 3, 11149);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginErrorValidation')
-data.setCell(1, 2, 'com.automation.selenium_automation.tests.ErrorValidations')
-data.setCell(1, 3, 747);
+data.setCell(1, 1, 'e2eTest')
+data.setCell(1, 2, 'com.automation.selenium_automation.tests.E2eTestTestNG')
+data.setCell(1, 3, 11061);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 33 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -253,30 +241,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.automation.selenium_automation.tests.ErrorValidations</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.automation.selenium_automation.tests.E2eTestTestNG</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">launchApp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">loginErrorValidation</span>
-                <span class="method-start">4142 ms</span>
+                <span class="method-name">e2eTest({password=Qwe123!@, email=qwe123@daum.com, products=[ZARA COAT 3, IPHONE 13 PRO]})</span>
+                <span class="method-start">5398 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">quitWebsite</span>
-                <span class="method-start">4895 ms</span>
+                <span class="method-start">16551 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">launchApp</span>
-                <span class="method-start">5036 ms</span>
+                <span class="method-start">16712 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">orderErrorValidation</span>
-                <span class="method-start">8661 ms</span>
+                <span class="method-name">e2eTest({password=Qwe123!@, email=qwe1233@daum.com, products=[ADIDAS ORIGINAL, ZARA COAT 3]})</span>
+                <span class="method-start">21597 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">quitWebsite</span>
-                <span class="method-start">11795 ms</span>
+                <span class="method-start">32659 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
