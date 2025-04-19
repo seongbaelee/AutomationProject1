@@ -17,7 +17,7 @@ import com.automation.selenium_automation.pages.ConfirmationPage;
 import com.automation.selenium_automation.pages.HomePage;
 import com.automation.selenium_automation.utils.Utils;
 
-public class e2eTestTestNG extends Base {
+public class E2eTestTestNG extends Base {
 
 	@Test(dataProvider="getData")
 	public void e2eTest (HashMap<String, Object> input) {

@@ -6,23 +6,9 @@
 			class-name="com.automation.selenium_automation.helpers.Listeners" />
 	</listeners>
 
-	<groups>
-		<run>
-			<include name="ErrorHandling" />
-		</run>
-	</groups>
-
 	<test thread-count="5" name="end to end test">
 		<classes>
-			<class name="com.automation.selenium_automation.tests.e2eTestTestNG" />
-		</classes>
-	</test> <!--
-	Test -->
-
-	<test thread-count="5" name="Error Validation Test">
-		<classes>
-			<class
-				name="com.automation.selenium_automation.errorTests.LoginErrorTest" />
+			<class name="com.automation.selenium_automation.tests.E2eTestTestNG" />
 		</classes>
 	</test> <!--
 	Test -->

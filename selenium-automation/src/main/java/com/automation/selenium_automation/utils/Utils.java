@@ -33,6 +33,10 @@ public class Utils {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 	
+	public void waitElementsToAppearByElement(List<WebElement> elements) {
+		 wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+	}
+	
 	public Boolean waitElementToDisapearByLocator(By locator) {
 		return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}

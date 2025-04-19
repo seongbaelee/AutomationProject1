@@ -25,6 +25,9 @@ public class HomePage extends Utils {
 	@FindBy(css="button[routerlink*='cart']")
 	WebElement cartBtnEle;
 	
+	@FindBy(css="button[routerlink*='myorders']")
+	WebElement ordersBtnEle;
+	
 	By productsContentLocator = By.cssSelector(".container div.row div.card-body");
 	By addBtnLocator = By.cssSelector("button:last-of-type");
 	By overlayLocator = By.cssSelector(".ng-animating");
@@ -47,5 +50,11 @@ public class HomePage extends Utils {
 		cartBtnEle.click();
 	    CartPage cartPage = new CartPage(driver);
 	    return cartPage;
+	}
+
+	public OrdersPage clickToOrders() {
+		ordersBtnEle.click();
+	    OrdersPage orderspage = new OrdersPage(driver);
+	    return orderspage;
 	}
 }
