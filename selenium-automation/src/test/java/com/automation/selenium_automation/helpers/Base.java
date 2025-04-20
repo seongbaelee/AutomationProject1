@@ -21,13 +21,13 @@ public class Base {
 
 	public WebDriver initializeDriver() throws IOException {
 
-//		Properties prop = new Properties();
-//		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
-//				+ "\\src\\main\\java\\com\\automation\\selenium_automation\\resources\\GlobalData.properties");
-//		prop.load(fis);
-//		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
-//				: prop.getProperty("browser");
-		String browserName = "Chrome";
+		Properties prop = new Properties();
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
+				+ "\\src\\main\\java\\com\\automation\\selenium_automation\\resources\\GlobalData.properties");
+		prop.load(fis);
+		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
+				: prop.getProperty("browser");
+		
 		if (browserName.contains("Chrome")) {
 			ChromeOptions options = new ChromeOptions();
 			if(browserName.contains("headless")) {
