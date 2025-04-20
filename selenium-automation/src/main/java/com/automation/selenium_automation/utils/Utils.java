@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -49,9 +50,18 @@ public class Utils {
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 	
+	public WebElement waitElementToBeClickableByElement(WebElement element) {
+		return wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
 	public void waitElementToAppearAndDisappear(By locator) {
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+	}
+	
+	public void scrollToShowElement(WebElement element) throws InterruptedException {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(false);", element);
+		Thread.sleep(500);
 	}
 	
 	public static List<HashMap<String,Object>> getJsonDataToMap(String filePath) throws IOException {

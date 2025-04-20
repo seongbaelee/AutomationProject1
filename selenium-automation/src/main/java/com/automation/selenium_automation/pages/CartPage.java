@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,7 +36,8 @@ public class CartPage extends Utils{
 		return productTitles;
 	}
 	
-	public CheckoutPage clickCheckOut() {
+	public CheckoutPage clickCheckOut() throws InterruptedException {
+		scrollToShowElement(checkoutBtnEle);
 		checkoutBtnEle.click();
 		CheckoutPage checkoutpage = new CheckoutPage(driver);
 		return checkoutpage;

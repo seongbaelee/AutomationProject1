@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-19T18:11:14 EDT" name="Suite" finished-at="2025-04-19T18:11:47 EDT" duration-ms="33027">
+  <suite started-at="2025-04-19T21:58:58 EDT" name="Suite" finished-at="2025-04-19T21:59:32 EDT" duration-ms="33610">
     <groups>
     </groups>
-    <test started-at="2025-04-19T18:11:14 EDT" name="end to end test" finished-at="2025-04-19T18:11:47 EDT" duration-ms="33027">
+    <test started-at="2025-04-19T21:58:58 EDT" name="end to end test" finished-at="2025-04-19T21:59:32 EDT" duration-ms="33610">
       <class name="com.automation.selenium_automation.tests.E2eTestTestNG">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T18:11:14 EDT" name="launchApp" finished-at="2025-04-19T18:11:19 EDT" duration-ms="5397" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T21:58:59 EDT" name="launchApp" finished-at="2025-04-19T21:59:04 EDT" duration-ms="5278" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="e2eTest(java.util.HashMap)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T18:11:19 EDT" name="e2eTest" data-provider="getData" finished-at="2025-04-19T18:11:30 EDT" duration-ms="11149" status="PASS">
+        <test-method signature="e2eTest(java.util.HashMap)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T21:59:04 EDT" name="e2eTest" data-provider="getData" finished-at="2025-04-19T21:59:15 EDT" duration-ms="11545" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,15 +22,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- e2eTest -->
-        <test-method is-config="true" signature="quitWebsite()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T18:11:30 EDT" name="quitWebsite" finished-at="2025-04-19T18:11:30 EDT" duration-ms="161" status="PASS">
+        <test-method is-config="true" signature="quitWebsite()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T21:59:15 EDT" name="quitWebsite" finished-at="2025-04-19T21:59:16 EDT" duration-ms="146" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitWebsite -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T18:11:30 EDT" name="launchApp" finished-at="2025-04-19T18:11:35 EDT" duration-ms="4885" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T21:59:16 EDT" name="launchApp" finished-at="2025-04-19T21:59:20 EDT" duration-ms="4837" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="e2eTest(java.util.HashMap)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T18:11:35 EDT" name="e2eTest" data-provider="getData" finished-at="2025-04-19T18:11:46 EDT" duration-ms="11061" status="PASS">
+        <test-method signature="e2eTest(java.util.HashMap)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T21:59:20 EDT" name="e2eTest" data-provider="getData" finished-at="2025-04-19T21:59:32 EDT" duration-ms="11464" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,7 +41,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- e2eTest -->
-        <test-method is-config="true" signature="quitWebsite()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T18:11:46 EDT" name="quitWebsite" finished-at="2025-04-19T18:11:47 EDT" duration-ms="153" status="PASS">
+        <test-method is-config="true" signature="quitWebsite()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@461ad730]" started-at="2025-04-19T21:59:32 EDT" name="quitWebsite" finished-at="2025-04-19T21:59:32 EDT" duration-ms="138" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitWebsite -->

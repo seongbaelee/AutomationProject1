@@ -4,8 +4,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -19,28 +21,20 @@ public class Base {
 
 	public WebDriver initializeDriver() throws IOException {
 
-		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
-				+ "\\src\\main\\java\\com\\automation\\selenium_automation\\resources\\GlobalData.properties");
-		prop.load(fis);
-		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
-				: prop.getProperty("browser");
-
-//		String browserName = "Chrome";
-//		if (browserName == "Chrome") {
-//			driver = new ChromeDriver();
-//		}
-//
-//		if (browserName == "firefox") {
-//			driver = new FirefoxDriver();
-//		}
-//
-//		if (browserName == "edge") {
-//			driver = new EdgeDriver();
-//		}
-
-		if (browserName.equalsIgnoreCase("Chrome")) {
-			driver = new ChromeDriver();
+//		Properties prop = new Properties();
+//		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
+//				+ "\\src\\main\\java\\com\\automation\\selenium_automation\\resources\\GlobalData.properties");
+//		prop.load(fis);
+//		String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
+//				: prop.getProperty("browser");
+		String browserName = "Chrome";
+		if (browserName.contains("Chrome")) {
+			ChromeOptions options = new ChromeOptions();
+			if(browserName.contains("headless")) {
+				options.addArguments("--headless=new");
+			}
+			options.addArguments("--window-size=1440,900");
+			driver = new ChromeDriver(options);
 		}
 
 		if (browserName.equalsIgnoreCase("Firefox")) {
@@ -50,7 +44,7 @@ public class Base {
 		if (browserName.equalsIgnoreCase("Edge")) {
 			driver = new EdgeDriver();
 		}
-
+		
 		return driver;
 	}
 

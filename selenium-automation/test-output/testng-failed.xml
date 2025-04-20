@@ -8,7 +8,7 @@
     <classes>
       <class name="com.automation.selenium_automation.tests.E2eTestTestNG">
         <methods>
-          <include name="e2eTest"/>
+          <include name="e2eTest" invocation-numbers="0"/>
           <include name="quitWebsite"/>
           <include name="launchApp"/>
         </methods>
