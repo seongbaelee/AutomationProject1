@@ -80,21 +80,24 @@ src/
    mvn test -PErrorValidation -Dbrowser=Edge
     ```
 
-⚙️ Prerequisites
+## ⚙️ Prerequisites
 Java 17
 
 Maven
 
-Chrome browser & ChromeDriver
-
-Test account at rahulshettyacademy.com
+Chrome browser 
 
 ## 💡 Notes
 
-- Test user account required to log in (create one manually before running).
+- Test user accounts are stored in test/java/com.automation.selenium_automation/data/info.json.
 - ChromeDriver version must match your browser.
 
 ## 📷 Screenshots (optional)
-_Add test run screenshots here if available._
+When all cases passed:
+![image](https://github.com/user-attachments/assets/805af24b-3363-46d2-9594-f2b3409be287)
+
+When error occurred: 
+![image](https://github.com/user-attachments/assets/eb3feb47-8885-4e63-8480-c5006743cdc5)
+
 
 ---
