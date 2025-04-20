@@ -19,10 +19,15 @@ public class ErrorValidations extends Base {
 
 	// error when logged in successfully
 	@Test(groups= {"ErrorHandling"})
-	public void loginErrorValidation() {
+	public void loginErrorMessageValidation() {
 		String errorMessage = loginPage.invalidLogin("qwe123@daum.com", "Qwe123!!");
-		System.out.println(errorMessage);
-		Assert.assertEquals(errorMessage, "Incorrect email or password.");
+		Assert.assertEquals(errorMessage, "Incorrect banana or password.");
+	}
+	
+	@Test(groups= {"ErrorHandling"})
+	public void inValidEmailFormValidation() {
+		String errorMessage = loginPage.invalidEmail("qwe123", "Qwe123!!");
+		Assert.assertTrue(errorMessage.contains("Enter Valid Email"));
 	}
 
 	// error when products are not matching products inside orders page
@@ -45,7 +50,6 @@ public class ErrorValidations extends Base {
 		//sending products size to check how many items we purchased
 		List<String> productNames = orderspage.getOrdersProduct(products.size());
 		Assert.assertTrue(productNames.equals(products));
-//		System.out.println(productNames);
 
 	}
 }

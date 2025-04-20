@@ -26,8 +26,6 @@ public class E2eTestTestNG extends Base {
 		Object[] loginResult = loginPage.validLogin((String) input.get("email"), (String) input.get("password"));
 		Assert.assertEquals(loginResult[0], "Login Successfully");
 		HomePage homepage = (HomePage) loginResult[1];
-
-		System.out.println("Window size: " + driver.manage().window().getSize());
 		
 		List<String> selectedItems = ((List<String>) input.get("products")).stream().sorted()
 				.collect(Collectors.toList());

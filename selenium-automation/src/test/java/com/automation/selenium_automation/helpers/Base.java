@@ -20,6 +20,8 @@ public class Base {
 	public WebDriver driver;
 	public LoginPage loginPage;
 
+    public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+
 	public WebDriver initializeDriver() throws IOException {
 
 		Properties prop = new Properties();

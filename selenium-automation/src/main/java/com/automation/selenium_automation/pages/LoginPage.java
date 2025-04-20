@@ -26,6 +26,9 @@ public class LoginPage extends Utils {
 	@FindBy(id="login")
 	WebElement loginEle;
 	
+	@FindBy(css=".invalid-feedback div")
+	WebElement emailErrorEle;
+	
 	By success = By.cssSelector(".toast-title");
 	By error = By.cssSelector(".toast-error");
 	
@@ -44,6 +47,14 @@ public class LoginPage extends Utils {
 		userPasswordEle.sendKeys(password);
 		loginEle.click();
 		String InvalidMessage = waitElementToAppearByLocator(error).getText();
+		return InvalidMessage;
+	}
+	
+	public String invalidEmail(String email, String password) {
+		emailEle.sendKeys(email);
+		userPasswordEle.sendKeys(password);
+		loginEle.click();
+		String InvalidMessage = emailErrorEle.getText();
 		return InvalidMessage;
 	}
 	

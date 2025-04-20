@@ -6,8 +6,8 @@
       <class name="com.automation.selenium_automation.tests.ErrorValidations">
         <methods>
           <include name="quitWebsite"/>
-          <include name="orderErrorValidation"/>
           <include name="launchApp"/>
+          <include name="loginErrorMessageValidation"/>
         </methods>
       </class> <!-- com.automation.selenium_automation.tests.ErrorValidations -->
     </classes>
