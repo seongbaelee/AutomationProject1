@@ -25,25 +25,28 @@ src/
 ├── main/
 │   └── java/
 │       └── com.automation.selenium_automation/
-│           ├── base/              # Base test setup
-│           │   └── Base.java
 │           ├── pages/             # Page Object classes
-│           │   ├── App.java
-│           │   ├── LoginPage.java
 │           │   ├── CartPage.java
 │           │   ├── CheckoutPage.java
-│           │   └── ConfirmationPage.java
-│           └── utils/             # Helper functions
+│           │   ├── ConfirmationPage.java
+│           │   ├── HomePage.java
+│           │   ├── LoginPage.java
+│           │   └── OrdersPage.java
+│           ├── resources/         # browser property to run tests on maven
+│           │   └── GlobalData.properties
+│           └── utils/             # Helper functions for Page Object
 │               └── Utils.java
 └── test/
     └── java/
         └── com.automation.selenium_automation/
-            ├── tests/             # Main test cases
-            │   ├── AppTest.java
-            │   ├── e2eTest.java
-            │   └── e2eTestTestNG.java
-            └── errorTests/        # Negative test scenarios
-                └── LoginErrorTest.java
+            ├── data/
+            │   └── info.json      # Data to run test cases 
+            ├── helpers/           # Helper functions for test cases
+            │   ├── Base.java
+            │   └── Listeners.java
+            └── tests/             # Main test cases
+                ├── E2eTestTestNG.java
+                └── ErrorValidations.java
 ```
 
 
@@ -53,12 +56,29 @@ src/
 1. Clone the repository:
     ```bash
    git clone https://github.com/seongbaelee/AutomationProject1.git
-2. Install dependencies:
+2. Change to the project directory:
+    ```bash
+    cd AutomationProject1/selenium-automation  
+3. Install dependencies (optional if already working):
     ```bash
    mvn clean install
-3. Run tests:
+4. Run tests:<br>
+   Run Regression tests on Chrome
     ```bash
-   mvn test
+   mvn test -PRegression -Dbrowser=Chrome
+    ```
+   Run Error Validation tests on Chrome Headless
+   ```bash
+   mvn test -PErrorValidation -Dbrowser=Chromeheadless
+    ```
+   Run Error Validation tests on Firefox
+   ```bash
+   mvn test -PErrorValidation -Dbrowser=Firefox
+    ```
+   Run Error Validation tests on Edge
+   ```bash
+   mvn test -PErrorValidation -Dbrowser=Edge
+    ```
 
 ⚙️ Prerequisites
 Java 17
