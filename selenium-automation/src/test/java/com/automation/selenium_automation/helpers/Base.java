@@ -4,12 +4,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -38,11 +39,16 @@ public class Base {
 		}
 
 		if (browserName.equalsIgnoreCase("Firefox")) {
-			driver = new FirefoxDriver();
+			FirefoxOptions options = new FirefoxOptions();
+		    options.addArguments("--width=1440", "--height=900");
+			driver = new FirefoxDriver(options);
 		}
 
 		if (browserName.equalsIgnoreCase("Edge")) {
-			driver = new EdgeDriver();
+			EdgeOptions options = new EdgeOptions();
+		    options.addArguments("start-maximized"); 
+		    options.addArguments("--window-size=1440,900"); 
+			driver = new EdgeDriver(options);
 		}
 		
 		return driver;
