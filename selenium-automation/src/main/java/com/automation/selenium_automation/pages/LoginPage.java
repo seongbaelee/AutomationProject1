@@ -6,15 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.automation.selenium_automation.utils.Base;
 import com.automation.selenium_automation.utils.Utils;
 
 public class LoginPage extends Utils {
 	WebDriver driver;
 	
-	public LoginPage(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+	public LoginPage(WebDriver tlDriver) {
+		super(Base.tlDriver.get());
+		this.driver = tlDriver;
+		System.out.println(tlDriver + "constructor");
+		PageFactory.initElements(tlDriver, this);
 	}
 	
 	@FindBy(id="userEmail")
@@ -46,6 +48,7 @@ public class LoginPage extends Utils {
 		emailEle.sendKeys(id);
 		userPasswordEle.sendKeys(password);
 		loginEle.click();
+		System.out.println(driver);
 		String InvalidMessage = waitElementToAppearByLocator(error).getText();
 		return InvalidMessage;
 	}
@@ -54,6 +57,8 @@ public class LoginPage extends Utils {
 		emailEle.sendKeys(email);
 		userPasswordEle.sendKeys(password);
 		loginEle.click();
+		System.out.println(driver);
+
 		String InvalidMessage = emailErrorEle.getText();
 		return InvalidMessage;
 	}

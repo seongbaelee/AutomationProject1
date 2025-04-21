@@ -10,9 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.automation.selenium_automation.helpers.Base;
 import com.automation.selenium_automation.pages.HomePage;
 import com.automation.selenium_automation.pages.OrdersPage;
+import com.automation.selenium_automation.utils.Base;
 import com.automation.selenium_automation.utils.Utils;
 
 public class ErrorValidations extends Base {
@@ -20,13 +20,13 @@ public class ErrorValidations extends Base {
 	// error when logged in successfully
 	@Test(groups= {"ErrorHandling"})
 	public void loginErrorMessageValidation() {
-		String errorMessage = loginPage.invalidLogin("qwe123@daum.com", "Qwe123!!");
+		String errorMessage = tlLoginPage.get().invalidLogin("qwe123@daum.com", "Qwe123!!");
 		Assert.assertEquals(errorMessage, "Incorrect banana or password.");
 	}
 	
 	@Test(groups= {"ErrorHandling"})
 	public void inValidEmailFormValidation() {
-		String errorMessage = loginPage.invalidEmail("qwe123", "Qwe123!!");
+		String errorMessage = tlLoginPage.get().invalidEmail("qwe123", "Qwe123!!");
 		Assert.assertTrue(errorMessage.contains("Enter Valid Email"));
 	}
 
@@ -42,7 +42,7 @@ public class ErrorValidations extends Base {
 		List<String> products = ((List<String>) data.get(0).get("products")).stream().sorted()
 				.collect(Collectors.toList());
 
-		Object[] loginResult = loginPage.validLogin(email, password);
+		Object[] loginResult = tlLoginPage.get().validLogin(email, password);
 		Assert.assertEquals(loginResult[0], "Login Successfully");
 		HomePage homepage = (HomePage) loginResult[1];
 		OrdersPage orderspage = homepage.clickToOrders();

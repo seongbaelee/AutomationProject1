@@ -1,4 +1,4 @@
-package com.automation.selenium_automation.helpers;
+package com.automation.selenium_automation.utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,13 +17,12 @@ import org.testng.annotations.BeforeMethod;
 import com.automation.selenium_automation.pages.LoginPage;
 
 public class Base {
-	public WebDriver driver;
-	public LoginPage loginPage;
-
+//	public LoginPage loginPage;
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+    public ThreadLocal<LoginPage> tlLoginPage = new ThreadLocal<>();
 
-	public WebDriver initializeDriver() throws IOException {
 
+	public void initializeDriver() throws IOException {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")
 				+ "\\src\\main\\java\\com\\automation\\selenium_automation\\resources\\GlobalData.properties");
@@ -37,35 +36,40 @@ public class Base {
 				options.addArguments("--headless=new");
 			}
 			options.addArguments("--window-size=1440,900");
-			driver = new ChromeDriver(options);
+			WebDriver driver = new ChromeDriver(options);
+			tlDriver.set(driver);
 		}
 
 		if (browserName.equalsIgnoreCase("Firefox")) {
 			FirefoxOptions options = new FirefoxOptions();
 		    options.addArguments("--width=1440", "--height=900");
-			driver = new FirefoxDriver(options);
+			WebDriver driver = new FirefoxDriver(options);
+			tlDriver.set(driver);
+
 		}
 
 		if (browserName.equalsIgnoreCase("Edge")) {
 			EdgeOptions options = new EdgeOptions();
 		    options.addArguments("start-maximized"); 
 		    options.addArguments("--window-size=1440,900"); 
-			driver = new EdgeDriver(options);
+			WebDriver driver = new EdgeDriver(options);
+			tlDriver.set(driver);
 		}
 		
-		return driver;
 	}
 
 	@BeforeMethod(alwaysRun = true)
-	public LoginPage launchApp() throws IOException {
-		driver = initializeDriver();
-		loginPage = new LoginPage(driver);
-		loginPage.gotoLoginPage();
-		return loginPage;
+	public void launchApp() throws IOException {
+		initializeDriver();
+		System.out.println(tlDriver.get()+ "launchapp");
+		LoginPage loginPage = new LoginPage(tlDriver.get());
+		tlLoginPage.set(loginPage);
+		tlLoginPage.get().gotoLoginPage();
 	}
 
 	@AfterMethod(alwaysRun = true)
-	public void quitWebsite() {
-		driver.quit();
+	public void tearDown() {
+		tlDriver.get().quit();
+		tlDriver.remove();
 	}
 }

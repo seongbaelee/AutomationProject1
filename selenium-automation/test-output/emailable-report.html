@@ -9,11 +9,19 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">end to end test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">28,142</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Error Validation</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">8,067</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">end to end test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.automation.selenium_automation.tests.E2eTestTestNG</td><td><a href="#m0">e2eTest</a></td><td rowspan="2">1745181286496</td><td rowspan="2">9963</td></tr><tr class="passedeven"><td><a href="#m1">e2eTest</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Error Validation &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.automation.selenium_automation.tests.ErrorValidations</td><td><a href="#m0">loginErrorMessageValidation</a></td><td rowspan="1">1745271942603</td><td rowspan="1">709</td></tr><tr><th colspan="4">Error Validation &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.automation.selenium_automation.tests.ErrorValidations</td><td><a href="#m1">inValidEmailFormValidation</a></td><td rowspan="1">1745271941491</td><td rowspan="1">208</td></tr><tr class="passedeven"><td><a href="#m2">orderErrorValidation</a></td><td rowspan="1">1745271941502</td><td rowspan="1">3147</td></tr></tbody>
 </table>
-<h2>end to end test</h2><h3 id="m0">com.automation.selenium_automation.tests.E2eTestTestNG#e2eTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Qwe123!@, email=qwe1233@daum.com, products=[ADIDAS ORIGINAL, ZARA COAT 3]}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.automation.selenium_automation.tests.E2eTestTestNG#e2eTest</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Qwe123!@, email=qwe123@daum.com, products=[ZARA COAT 3, IPHONE 13 PRO]}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Error Validation</h2><h3 id="m0">com.automation.selenium_automation.tests.ErrorValidations#loginErrorMessageValidation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [Incorrect banana or password.] but found [Incorrect email or password.]
+	at com.automation.selenium_automation.tests.ErrorValidations.loginErrorMessageValidation(ErrorValidations.java:24)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.automation.selenium_automation.tests.ErrorValidations#inValidEmailFormValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.automation.selenium_automation.tests.ErrorValidations#orderErrorValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

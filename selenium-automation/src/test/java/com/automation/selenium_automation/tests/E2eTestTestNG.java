@@ -10,11 +10,11 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.automation.selenium_automation.helpers.Base;
 import com.automation.selenium_automation.pages.CartPage;
 import com.automation.selenium_automation.pages.CheckoutPage;
 import com.automation.selenium_automation.pages.ConfirmationPage;
 import com.automation.selenium_automation.pages.HomePage;
+import com.automation.selenium_automation.utils.Base;
 import com.automation.selenium_automation.utils.Utils;
 
 public class E2eTestTestNG extends Base {
@@ -23,7 +23,7 @@ public class E2eTestTestNG extends Base {
 	public void e2eTest(HashMap<String, Object> input) throws InterruptedException {
 //		driver.manage().window().maximize();
 
-		Object[] loginResult = loginPage.validLogin((String) input.get("email"), (String) input.get("password"));
+		Object[] loginResult = tlLoginPage.get().validLogin((String) input.get("email"), (String) input.get("password"));
 		Assert.assertEquals(loginResult[0], "Login Successfully");
 		HomePage homepage = (HomePage) loginResult[1];
 		

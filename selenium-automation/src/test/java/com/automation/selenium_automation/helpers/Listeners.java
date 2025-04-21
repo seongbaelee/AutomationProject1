@@ -7,6 +7,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.automation.selenium_automation.utils.Base;
 import com.automation.selenium_automation.utils.Utils;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -37,17 +38,17 @@ public class Listeners extends Base implements ITestListener {
 //    	test.fail(result.getThrowable());
     	extentTest.get().fail(result.getThrowable());
     	
-    	try {
-    		driver = (WebDriver) result.getTestClass().getRealClass().getField("driver")
-    				.get(result.getInstance());
-    	} catch (Exception e1) {
-    		e1.printStackTrace();
-    	}
-    	
+//    	try {
+//    		driver = (WebDriver) result.getTestClass().getRealClass().getField("driver")
+//    				.get(result.getInstance());
+//    	} catch (Exception e1) {
+//    		e1.printStackTrace();
+//    	}
+//    	
     	String filePath = null;
     	
 		try {
-			filePath = Utils.getScreenshot(result.getMethod().getMethodName(), driver);
+			filePath = Utils.getScreenshot(result.getMethod().getMethodName(), tlDriver.get());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
