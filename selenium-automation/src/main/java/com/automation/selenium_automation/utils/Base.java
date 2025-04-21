@@ -17,7 +17,6 @@ import org.testng.annotations.BeforeMethod;
 import com.automation.selenium_automation.pages.LoginPage;
 
 public class Base {
-//	public LoginPage loginPage;
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
     public ThreadLocal<LoginPage> tlLoginPage = new ThreadLocal<>();
 
@@ -61,7 +60,6 @@ public class Base {
 	@BeforeMethod(alwaysRun = true)
 	public void launchApp() throws IOException {
 		initializeDriver();
-		System.out.println(tlDriver.get()+ "launchapp");
 		LoginPage loginPage = new LoginPage(tlDriver.get());
 		tlLoginPage.set(loginPage);
 		tlLoginPage.get().gotoLoginPage();

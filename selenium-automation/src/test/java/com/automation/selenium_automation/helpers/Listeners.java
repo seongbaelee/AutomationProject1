@@ -36,15 +36,7 @@ public class Listeners extends Base implements ITestListener {
     public void onTestFailure(ITestResult result) {
 //        System.out.println("Test Failed: " + result.getName());
 //    	test.fail(result.getThrowable());
-    	extentTest.get().fail(result.getThrowable());
-    	
-//    	try {
-//    		driver = (WebDriver) result.getTestClass().getRealClass().getField("driver")
-//    				.get(result.getInstance());
-//    	} catch (Exception e1) {
-//    		e1.printStackTrace();
-//    	}
-//    	
+    	extentTest.get().fail(result.getThrowable());	
     	String filePath = null;
     	
 		try {

@@ -15,7 +15,6 @@ public class LoginPage extends Utils {
 	public LoginPage(WebDriver tlDriver) {
 		super(Base.tlDriver.get());
 		this.driver = tlDriver;
-		System.out.println(tlDriver + "constructor");
 		PageFactory.initElements(tlDriver, this);
 	}
 	
@@ -48,7 +47,6 @@ public class LoginPage extends Utils {
 		emailEle.sendKeys(id);
 		userPasswordEle.sendKeys(password);
 		loginEle.click();
-		System.out.println(driver);
 		String InvalidMessage = waitElementToAppearByLocator(error).getText();
 		return InvalidMessage;
 	}
@@ -57,8 +55,6 @@ public class LoginPage extends Utils {
 		emailEle.sendKeys(email);
 		userPasswordEle.sendKeys(password);
 		loginEle.click();
-		System.out.println(driver);
-
 		String InvalidMessage = emailErrorEle.getText();
 		return InvalidMessage;
 	}
