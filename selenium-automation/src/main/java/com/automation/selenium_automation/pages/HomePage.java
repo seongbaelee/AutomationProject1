@@ -37,8 +37,6 @@ public class HomePage extends Utils {
 			waitElementAllToAppearByLocator(productsContentLocator);
 			productsEle.stream().filter(productEle -> {
 			String productName = productEle.findElement(By.tagName("h5")).getText();
-			System.out.println(selectedItems + "in add cart");
-			System.out.println(productName + "int add cart");
 			return selectedItems.contains(productName);
 		}).forEach(productEle -> {
 			WebElement addCartBtn = productEle.findElement(addBtnLocator);

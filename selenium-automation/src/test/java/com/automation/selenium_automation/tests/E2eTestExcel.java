@@ -37,11 +37,6 @@ public class E2eTestExcel extends Base {
 		CartPage cartpage = homepage.clickToCart();
 		
 		List<String> productTitles = cartpage.getProductTitles();
-		
-		System.out.println(products + "hi1");
-		System.out.println(selectedItems + "hi2");
-		System.out.println(productTitles + "hi3");
-		
 		Assert.assertTrue(selectedItems.equals(productTitles));
 		CheckoutPage checkoutpage = cartpage.clickCheckOut();
 
