@@ -2,50 +2,70 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-21T17:52:14 EDT" name="Suite" finished-at="2025-04-21T17:52:41 EDT" duration-ms="27828">
+  <suite started-at="2025-04-30T23:08:42 EDT" name="Default suite" finished-at="2025-04-30T23:09:16 EDT" duration-ms="34227">
     <groups>
     </groups>
-    <test started-at="2025-04-21T17:52:14 EDT" name="end to end test" finished-at="2025-04-21T17:52:41 EDT" duration-ms="27828">
-      <class name="com.automation.selenium_automation.tests.E2eTestTestNG">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@36804139]" started-at="2025-04-21T17:52:14 EDT" name="launchApp" finished-at="2025-04-21T17:52:18 EDT" duration-ms="4015" status="PASS">
+    <test started-at="2025-04-30T23:08:42 EDT" name="Default test" finished-at="2025-04-30T23:09:16 EDT" duration-ms="34227">
+      <class name="com.automation.selenium_automation.tests.E2eTestExcel">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:08:43 EDT" name="launchApp" finished-at="2025-04-30T23:08:48 EDT" duration-ms="5292" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="e2eTest(java.util.HashMap)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@36804139]" started-at="2025-04-21T17:52:18 EDT" name="e2eTest" data-provider="getData" finished-at="2025-04-21T17:52:28 EDT" duration-ms="9942" status="PASS">
+        <test-method signature="e2eTest(java.lang.String,java.lang.String,java.util.List)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:08:48 EDT" name="e2eTest" data-provider="excelData" finished-at="2025-04-30T23:09:00 EDT" duration-ms="11581" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{password=Qwe123!@, email=qwe123@daum.com, products=[ZARA COAT 3, IPHONE 13 PRO]}]]>
+                <![CDATA[qwe123@daum.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Qwe123!@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[[ZARA COAT 3, IPHONE 13 PRO]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- e2eTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@36804139]" started-at="2025-04-21T17:52:28 EDT" name="tearDown" finished-at="2025-04-21T17:52:28 EDT" duration-ms="139" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:09:00 EDT" name="tearDown" finished-at="2025-04-30T23:09:00 EDT" duration-ms="145" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@36804139]" started-at="2025-04-21T17:52:28 EDT" name="launchApp" finished-at="2025-04-21T17:52:31 EDT" duration-ms="3495" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:09:00 EDT" name="launchApp" finished-at="2025-04-30T23:09:05 EDT" duration-ms="4815" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="e2eTest(java.util.HashMap)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@36804139]" started-at="2025-04-21T17:52:31 EDT" name="e2eTest" data-provider="getData" finished-at="2025-04-21T17:52:41 EDT" duration-ms="9904" status="PASS">
+        <test-method signature="e2eTest(java.lang.String,java.lang.String,java.util.List)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:09:05 EDT" name="e2eTest" data-provider="excelData" finished-at="2025-04-30T23:09:16 EDT" duration-ms="11516" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{password=Qwe123!@, email=qwe1233@daum.com, products=[ADIDAS ORIGINAL, ZARA COAT 3]}]]>
+                <![CDATA[qwe1233@daum.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Qwe123!@]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[[ADIDAS ORIGINAL, ZARA COAT 3]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- e2eTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestTestNG@36804139]" started-at="2025-04-21T17:52:41 EDT" name="tearDown" finished-at="2025-04-21T17:52:41 EDT" duration-ms="138" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:09:16 EDT" name="tearDown" finished-at="2025-04-30T23:09:16 EDT" duration-ms="139" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.automation.selenium_automation.tests.E2eTestTestNG -->
-    </test> <!-- end to end test -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.automation.selenium_automation.tests.E2eTestExcel -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

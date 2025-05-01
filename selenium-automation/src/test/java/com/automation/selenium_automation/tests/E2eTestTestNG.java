@@ -1,7 +1,6 @@
 package com.automation.selenium_automation.tests;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,8 +20,6 @@ public class E2eTestTestNG extends Base {
 
 	@Test(dataProvider = "getData")
 	public void e2eTest(HashMap<String, Object> input) throws InterruptedException {
-//		driver.manage().window().maximize();
-
 		Object[] loginResult = tlLoginPage.get().validLogin((String) input.get("email"), (String) input.get("password"));
 		Assert.assertEquals(loginResult[0], "Login Successfully");
 		HomePage homepage = (HomePage) loginResult[1];
@@ -53,6 +50,5 @@ public class E2eTestTestNG extends Base {
 		List<HashMap<String, Object>> data = Utils.getJsonDataToMap(
 				System.getProperty("user.dir") + "/src/test/java/com/automation/selenium_automation/data/info.json");
 		return new Object[][] { { data.get(0) }, { data.get(1) } };
-
 	}
 }
