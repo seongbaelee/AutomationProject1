@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-30T23:08:42 EDT" name="Default suite" finished-at="2025-04-30T23:09:16 EDT" duration-ms="34227">
+  <suite started-at="2025-04-30T23:15:20 EDT" name="Default suite" finished-at="2025-04-30T23:15:55 EDT" duration-ms="34180">
     <groups>
     </groups>
-    <test started-at="2025-04-30T23:08:42 EDT" name="Default test" finished-at="2025-04-30T23:09:16 EDT" duration-ms="34227">
+    <test started-at="2025-04-30T23:15:20 EDT" name="Default test" finished-at="2025-04-30T23:15:55 EDT" duration-ms="34180">
       <class name="com.automation.selenium_automation.tests.E2eTestExcel">
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:08:43 EDT" name="launchApp" finished-at="2025-04-30T23:08:48 EDT" duration-ms="5292" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:15:21 EDT" name="launchApp" finished-at="2025-04-30T23:15:26 EDT" duration-ms="5380" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="e2eTest(java.lang.String,java.lang.String,java.util.List)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:08:48 EDT" name="e2eTest" data-provider="excelData" finished-at="2025-04-30T23:09:00 EDT" duration-ms="11581" status="PASS">
+        <test-method signature="e2eTest(java.lang.String,java.lang.String,java.util.List)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:15:26 EDT" name="e2eTest" data-provider="excelData" finished-at="2025-04-30T23:15:38 EDT" duration-ms="11566" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,15 +32,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- e2eTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:09:00 EDT" name="tearDown" finished-at="2025-04-30T23:09:00 EDT" duration-ms="145" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:15:38 EDT" name="tearDown" finished-at="2025-04-30T23:15:38 EDT" duration-ms="151" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:09:00 EDT" name="launchApp" finished-at="2025-04-30T23:09:05 EDT" duration-ms="4815" status="PASS">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:15:38 EDT" name="launchApp" finished-at="2025-04-30T23:15:43 EDT" duration-ms="4679" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method signature="e2eTest(java.lang.String,java.lang.String,java.util.List)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:09:05 EDT" name="e2eTest" data-provider="excelData" finished-at="2025-04-30T23:09:16 EDT" duration-ms="11516" status="PASS">
+        <test-method signature="e2eTest(java.lang.String,java.lang.String,java.util.List)[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:15:43 EDT" name="e2eTest" data-provider="excelData" finished-at="2025-04-30T23:15:54 EDT" duration-ms="11550" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -61,7 +61,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- e2eTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:09:16 EDT" name="tearDown" finished-at="2025-04-30T23:09:16 EDT" duration-ms="139" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automation.selenium_automation.tests.E2eTestExcel@10683d9d]" started-at="2025-04-30T23:15:54 EDT" name="tearDown" finished-at="2025-04-30T23:15:55 EDT" duration-ms="151" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

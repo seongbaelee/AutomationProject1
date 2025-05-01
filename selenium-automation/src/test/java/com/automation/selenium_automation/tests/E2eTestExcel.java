@@ -23,6 +23,7 @@ import com.automation.selenium_automation.pages.CheckoutPage;
 import com.automation.selenium_automation.pages.ConfirmationPage;
 import com.automation.selenium_automation.pages.HomePage;
 import com.automation.selenium_automation.utils.Base;
+import com.automation.selenium_automation.utils.Utils;
 
 public class E2eTestExcel extends Base {
 	@Test(dataProvider = "excelData")
@@ -58,47 +59,9 @@ public class E2eTestExcel extends Base {
 	
 	@DataProvider(name = "excelData")
 	public Object[][] getData() throws IOException {
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\com\\automation\\selenium_automation\\data\\projectData.xlsx");
-		XSSFWorkbook workbook = new XSSFWorkbook(fis);
-		XSSFSheet target_sheet = workbook.getSheet("userinfo");
-		
-		Iterator<Row> rowIt = target_sheet.rowIterator();
-		List<List<Object>> allData = new ArrayList<>();
-		
-		if(rowIt.hasNext()) {
-			rowIt.next();
-		}
+		Object[][] data = Utils.getDataByExcel(System.getProperty("user.dir")
+				+ "\\src\\test\\java\\com\\automation\\selenium_automation\\data\\projectData.xlsx");
 
-		while (rowIt.hasNext()) {
-			Row row = rowIt.next();
-			List<Object> rowData = new ArrayList();
-
-			for (Cell cell : row) {
-				if (cell.getCellType() == CellType.STRING) {
-					String cellValue = cell.getStringCellValue();
-					if (cellValue.contains(",")) {
-						String[] products = cellValue.split(",");
-						List<String> productsList = Arrays.stream(products).map(product -> product.trim())
-								.collect(Collectors.toList());
-						rowData.add(productsList);
-					} else {
-						rowData.add(cell.getStringCellValue());
-					}
-				}
-
-				if (cell.getCellType() == CellType.NUMERIC) {
-					rowData.add(cell.getNumericCellValue());
-				}
-			}
-
-			allData.add(rowData);
-		}
-		
-		Object[][] arrayData = new Object[allData.size()][];
-		for(int i = 0; i < allData.size(); i++) {
-			arrayData[i] = allData.get(i).toArray();
-		}
-		
-		return arrayData;
+		return data;
 	}
 }

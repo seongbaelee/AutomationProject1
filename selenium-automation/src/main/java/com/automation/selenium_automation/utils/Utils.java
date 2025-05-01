@@ -1,12 +1,22 @@
 package com.automation.selenium_automation.utils;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -72,6 +82,53 @@ public class Utils {
 		ObjectMapper mapper = new ObjectMapper();
 		List<HashMap<String, Object>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, Object>>>() {});
 		return data;
+	}
+	
+	public static Object[][] getDataByExcel(String filePath) throws IOException {
+		FileInputStream fis = new FileInputStream(filePath);
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
+		XSSFSheet target_sheet = workbook.getSheet("userinfo");
+		
+		Iterator<Row> rowIt = target_sheet.rowIterator();
+		List<List<Object>> allData = new ArrayList<>(); //array of row array
+		
+		//skip first row (header part)
+		if(rowIt.hasNext()) {
+			rowIt.next();
+		}
+
+		while (rowIt.hasNext()) {
+			Row row = rowIt.next();
+			List<Object> rowData = new ArrayList(); //array of cell array on a row
+
+			for (Cell cell : row) {
+				if (cell.getCellType() == CellType.STRING) {
+					String cellValue = cell.getStringCellValue();
+					if (cellValue.contains(",")) {
+						String[] products = cellValue.split(",");
+						List<String> productsList = Arrays.stream(products).map(product -> product.trim())
+								.collect(Collectors.toList());
+						rowData.add(productsList);
+					} else {
+						rowData.add(cell.getStringCellValue());
+					}
+				}
+
+				if (cell.getCellType() == CellType.NUMERIC) {
+					rowData.add(cell.getNumericCellValue());
+				}
+			}
+
+			allData.add(rowData);
+		}
+		
+		//change array to multi-dimensional object
+		Object[][] arrayData = new Object[allData.size()][];
+		for(int i = 0; i < allData.size(); i++) {
+			arrayData[i] = allData.get(i).toArray();
+		}
+		
+		return arrayData;
 	}
 	
 	public static ExtentReports getReportObject() {
