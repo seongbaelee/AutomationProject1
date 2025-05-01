@@ -6,9 +6,15 @@
 			class-name="com.automation.selenium_automation.helpers.Listeners" />
 	</listeners>
 
-	<test thread-count="5" name="end to end test">
+	<test thread-count="5" name="end to end test with json data">
 		<classes>
 			<class name="com.automation.selenium_automation.tests.E2eTestTestNG" />
+		</classes>
+	</test> <!--
+	Test -->
+	<test thread-count="5" name="end to end test with excel data">
+		<classes>
+			<class name="com.automation.selenium_automation.tests.E2eTestExcel" />
 		</classes>
 	</test> <!--
 	Test -->
